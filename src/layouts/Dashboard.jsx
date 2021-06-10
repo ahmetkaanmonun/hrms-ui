@@ -17,7 +17,7 @@ export default function Dashboard() {
                     </Grid.Column>
                     <Grid.Column width={12}>
                         
-                        <JobSeekersList></JobSeekersList>
+                        <JobList></JobList>
                     </Grid.Column>
 
 

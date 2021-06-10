@@ -17,7 +17,6 @@ export default function JobSeekersList(){
           <Table celled>
             <Table.Header>   
               <Table.Row>
-                <Table.HeaderCell>JobSeeker Id</Table.HeaderCell>
                 <Table.HeaderCell>Firstname</Table.HeaderCell>
                 <Table.HeaderCell>Lastname</Table.HeaderCell>
                 <Table.HeaderCell>Nationality Id</Table.HeaderCell>

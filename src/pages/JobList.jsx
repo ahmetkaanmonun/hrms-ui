@@ -16,15 +16,15 @@ export default function JobList(){
           <Table celled>
             <Table.Header>   
               <Table.Row>
-                <Table.HeaderCell>Job Id</Table.HeaderCell>
                 <Table.HeaderCell>Job Title</Table.HeaderCell>
+                
               </Table.Row>
             </Table.Header>
     
             <Table.Body>
               {jobs.map((job) => (
                 <Table.Row key={job.id}>
-                  <Table.Cell>{job.jobTitle}</Table.Cell>
+                  <Table.Cell>{job.job}</Table.Cell>
                   
                 </Table.Row>
               ))}

@@ -1,46 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Menu, Button } from 'semantic-ui-react'
+import SignedIn from './SignedIn'
+import SignedOut from './SignedOut'
+
+
 
 export default function Navi() {
+
+    const[isAuthenticated,setIsAuthenticated] = useState(false)
+
+    function handleSignOut(params) {
+            
+        setIsAuthenticated(true)
+    }
+    function handleSignIn(params) {
+        
+        setIsAuthenticated(false)
+    }
+
     return (
+
+        
         <div>
 
-            <Menu inverted fixed size = "tiny">
+            <Menu inverted fixed="top">
                 <Container>
-                    <Menu.Item>
-                        <img src="https://www.mashura.co/site/wp-content/uploads/2018/09/HRMS-New.jpg" />
-                    </Menu.Item>
-                    <Menu.Item
-                        name='editorials'
+                    <Menu.Item name="home" />
+                    <Menu.Item name="messages" />
 
-                    >
-                        Editorials
-                    </Menu.Item>
+                    <Menu.Menu position="right">
+                        
+                        {isAuthenticated?<SignedIn signOut={handleSignOut}></SignedIn>:<SignedOut signIn={handleSignIn}></SignedOut>}
 
-                    <Menu.Item
-                        name='reviews'
-
-                    >
-                        Reviews
-                    </Menu.Item>
-
-                    <Menu.Item
-                        name='upcomingEvents'
-
-                    >
-                        Upcoming Events
-                    </Menu.Item>
-                    <Menu.Menu position='right'>
-                        <Button.Group position="right">
-                            <Button primary>Sign In</Button>
-                            <Button.Or />
-                            <Button positive>Sign Up</Button>
-                        </Button.Group>
                     </Menu.Menu>
-
                 </Container>
             </Menu>
-
         </div>
+
+       
     )
 }
